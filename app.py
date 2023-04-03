@@ -6,6 +6,23 @@ import json
 import requests
 import time
 import os
+from pathlib import Path
+
+
+folder = Path(__file__).parent
+
+if not (folder / "parameter_embeddings.csv.gz").exists():
+    response = requests.get(
+        "https://api.github.com/repos/PolicyEngine/policyengine-api/releases/assets/101996330",
+        headers={
+            "Accept": "application/octet-stream",
+        },
+    )
+
+    response.raise_for_status()
+
+    with open(folder / "parameter_embeddings.csv.gz", "wb") as f:
+        f.write(response.content)
 
 # Point OpenAI to the API key
 openai.api_key = os.environ["OPENAI_API_KEY"]
