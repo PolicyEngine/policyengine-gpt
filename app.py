@@ -13,7 +13,7 @@ folder = Path(__file__).parent
 
 if not (folder / "parameter_embeddings.csv.gz").exists():
     response = requests.get(
-        "https://api.github.com/repos/PolicyEngine/policyengine-api/releases/assets/101996330",
+        "https://github.com/PolicyEngine/policyengine-api/releases/download/embeddings/param_embeddings.csv.gz",
         headers={
             "Accept": "application/octet-stream",
         },
