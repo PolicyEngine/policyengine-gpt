@@ -15,7 +15,7 @@ if not (folder / "parameter_embeddings.csv.gz").exists():
     response = requests.get(
         "https://api.github.com/repos/PolicyEngine/policyengine-api/releases/assets/101996330",
         headers={
-            "Accept": "application/x-gzip",
+            "Accept": "application/octet-stream",
         },
     )
 
