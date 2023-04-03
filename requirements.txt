@@ -2,3 +2,6 @@ streamlit
 openai
 pandas
 requests
+scipy
+matplotlib
+plotly
